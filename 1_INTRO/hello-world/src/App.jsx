@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-      <p></p>
+      <h1>Olá, meu primeiro script</h1>
     </>
   )
 }
