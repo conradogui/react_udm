@@ -1,4 +1,3 @@
-
 const CarDetails = ({brand, km, color, newCar}) => {
   return (
     <div>
