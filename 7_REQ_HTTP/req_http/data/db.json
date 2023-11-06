@@ -24,6 +24,11 @@
       "name": "Macarrão",
       "price": "43",
       "id": 5
+    },
+    {
+      "name": "Joao",
+      "price": "12",
+      "id": 6
     }
   ]
 }
