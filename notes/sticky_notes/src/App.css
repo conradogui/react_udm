@@ -1,0 +1,27 @@
+* {
+    margin: 0;    
+    padding: 0;
+}
+.head {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    font-size: larger;
+}
+.head > button {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    background-color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px black;
+    width: 30px;
+}
+.head > button:active {
+    position: relative;
+    top: 4px;
+    left: 2px;
+    box-shadow: none;
+}
