@@ -25,3 +25,8 @@
     left: 2px;
     box-shadow: none;
 }
+.feed {
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+}
