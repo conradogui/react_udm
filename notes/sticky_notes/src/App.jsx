@@ -17,7 +17,6 @@ function App() {
   }
 
   const handleAddTask = (tarefa, data, descricao) => {
-    console.log(tarefa, data, descricao)
     const newTask = {tarefa,data, descricao}
     setTaskData([...taskData, newTask])
   }

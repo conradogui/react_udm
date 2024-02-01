@@ -1,9 +1,10 @@
 .itemFeed {
-    background-color: aquamarine;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     gap: 10px;
+    margin: 10px;
+
 }
 .item {
     display: flex;
@@ -12,9 +13,9 @@
     align-items: center;
     padding: 5px;
     max-width: 40%;
+    min-width: fit-content;
 }
 .item > p {
-    background-color: blueviolet;
     width: 100%;
     word-wrap: break-word;
 }

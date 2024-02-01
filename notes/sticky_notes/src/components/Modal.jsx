@@ -11,12 +11,14 @@ if(!isOpen) return null
 
 const handleSubmit = (e) => {
   e.preventDefault()
-  onSubmit(tarefa, data, descricao)
+  onSubmit(tarefa, formattedData, descricao)
   setTarefa("")
   setData("")
   setDescricao("")
   isClose()
 }
+
+const formattedData = data.split('-').reverse().join('/')
 
   return (
     <>
