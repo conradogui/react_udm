@@ -21,6 +21,8 @@ function App() {
     setTaskData([...taskData, newTask])
   }
 
+  
+
   return (
     <>
       <div className='head'>
@@ -29,7 +31,7 @@ function App() {
       </div>
         <Modal isOpen={modal} isClose={isModalClose} onSubmit={handleAddTask}/>
         <div className="feed">
-          <Feed taskData={taskData}/>
+          <Feed taskData={taskData} setTaskData={setTaskData}/>
         </div>
     </>
   )
