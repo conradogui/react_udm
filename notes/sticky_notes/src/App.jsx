@@ -31,7 +31,7 @@ function App() {
       </div>
         <Modal isOpen={modal} isClose={isModalClose} onSubmit={handleAddTask}/>
         <div className="feed">
-          <Feed taskData={taskData} setTaskData={setTaskData}/>
+          <Feed taskData={taskData} setModal={setModal} setTaskData={setTaskData}/>
         </div>
     </>
   )
