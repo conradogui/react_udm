@@ -7,6 +7,7 @@ function App() {
 
   const [modal, setModal] = useState(false)
   const [taskData, setTaskData] = useState([])
+  const [editedTask, setEditedTask] = useState(null)
 
   const isModalOpen = () => {
     setModal(true)
@@ -29,9 +30,9 @@ function App() {
         <h1>Notas</h1>
         <button onClick={isModalOpen}>+</button>
       </div>
-        <Modal isOpen={modal} isClose={isModalClose} onSubmit={handleAddTask}/>
+        <Modal isOpen={modal} isClose={isModalClose} onSubmit={handleAddTask} editedTask={editedTask} setEditedTask={setEditedTask}/>
         <div className="feed">
-          <Feed taskData={taskData} setModal={setModal} setTaskData={setTaskData}/>
+          <Feed taskData={taskData} setModal={setModal} setTaskData={setTaskData} setEditedTask={setEditedTask}/>
         </div>
     </>
   )

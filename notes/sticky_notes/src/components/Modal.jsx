@@ -1,11 +1,19 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './Modal.css'
 
-const Modal = ({isOpen, isClose, onSubmit}) => {
+const Modal = ({isOpen, isClose, onSubmit, editedTask}) => {
 
   const [tarefa, setTarefa] = useState("")
   const [data, setData] = useState("")
   const [descricao, setDescricao] = useState("")
+
+  useEffect(() => {
+    if(editedTask) {
+      setTarefa(editedTask.tarefa)
+      setData(editedTask.data)
+      setDescricao(editedTask.descricao)
+    }
+  }, [editedTask])
 
 if(!isOpen) return null
 
@@ -24,19 +32,26 @@ const formattedData = data.split('-').reverse().join('/')
     <>
       <div className="background">
         <form className="principal" onSubmit={handleSubmit}>
-          <h1>Adicionar tarefa</h1>
-          <input type="text" name="" id="" placeholder="Tarefa" value={tarefa} onChange={(e) => setTarefa(e.target.value)} />
-          <input type="date" name="" id="" value={data} onChange={(e) => setData(e.target.value)} />
+          <h1>{editedTask ? 'Editar Tarefa' : 'Adicionar Tarefa'}</h1>
+          <input
+            type="text"
+            placeholder="Tarefa"
+            value={tarefa}
+            onChange={(e) => setTarefa(e.target.value)}
+          />
+          <input
+            type="date"
+            value={data}
+            onChange={(e) => setData(e.target.value)}
+          />
           <textarea
-            name=""
-            id=""
-            cols="30"
-            rows="10"
             placeholder="Descrição da tarefa"
             value={descricao}
             onChange={(e) => setDescricao(e.target.value)}
           ></textarea>
-          <button className='add-button'>Adicionar</button>
+          <button className='add-button'>
+            {editedTask ? 'Editar' : 'Adicionar'}
+          </button>
           <button className="close-button" onClick={isClose}>Fechar</button>
         </form>
       </div>
