@@ -2,12 +2,12 @@ import { useState, useEffect } from "react";
 
 //4 - custom hook
 export const useFetch = (url) => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState(null); //para trabalhar com os dados que recebemos da API
 
   //5 - refatorando post
-  const [config, setConfig] = useState(null);
-  const [method, setMethod] = useState(null);
-  const [callFetch, setCallFetch] = useState(false);
+  const [config, setConfig] = useState(null); //configura o metodo que vai ser utilizado (POST,GET, DELETE), configura os cabeçalhos tambem
+  const [method, setMethod] = useState(null); //esse vai falar qual metodo que eu estaria utilizando na minha função (GET, POST, etc)
+  const [callFetch, setCallFetch] = useState(false); // vou chamar o callfetch no meu useEffect para atualizar e trazer os dados atualizados
 
   //6 - loading
   const [loading, setLoading] = useState(false);
@@ -19,7 +19,7 @@ export const useFetch = (url) => {
   const [itemId, setItemId] = useState(null)
 
 
-  const httpConfig = (data, method) => {
+  const httpConfig = (data, method) => { // faço essa função para não ter que configurar o config no componente que vou chamar ele
     if (method === "POST") {
       setConfig({
         method,
