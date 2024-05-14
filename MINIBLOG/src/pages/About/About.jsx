@@ -13,7 +13,7 @@ const About = () => {
         no Back-end
       </p>
       <Link to="/posts/create" className="btn">
-        Crair post
+        Criar post
       </Link>
     </div>
   );
